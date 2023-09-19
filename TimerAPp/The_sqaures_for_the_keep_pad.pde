@@ -4,6 +4,9 @@
  */
 //
 //Global Variables
+int numPadColumns = 3;
+float [] x = new float[numPadColumns];
+int numPadRow = 5;
 int moved = 0;
 int dragged = 0;
 int clicked = 0;
@@ -14,17 +17,18 @@ float widthSquare, heightSquare;
 float x0, x1, x2;
 float y0, y1, y2, y3, y4;
 //
-void setup() {
+ void setup() {
   size (400, 700);
   appWidth = width;
   appHeight = height;
   //
   //Population of rect() variables
+  
   widthSquare = appWidth*1/4;
   heightSquare = widthSquare;
-  x0 = widthSquare*1/2;
-  x1 = widthSquare*3/2;
-  x2 = widthSquare*5/2;
+  x0 = widthSquare*2/1;
+  x1 = widthSquare*2/2;
+  x2 = widthSquare*6/2;
   y0 = widthSquare*5/2;
   y1 = widthSquare*7/2;
   y2 = widthSquare*9/2;
@@ -36,6 +40,7 @@ void setup() {
   textAlign(CENTER, CENTER);
   frameRate(1); 
 }
+
 
   //
   //Nested FOR, reading rect() arrays
@@ -55,7 +60,7 @@ void draw() {
   
   String timeDisplay = nf(minutes, 2) + ":" + nf(seconds, 2);
   
-  text(timeDisplay, width/2, height/2);
+  text(timeDisplay, width/2, height/1/5);
   
   if (currentTime > 0) {
     currentTime--;
@@ -64,37 +69,23 @@ void draw() {
     noLoop(); // Stop the timer
   }
 
-  float startAngle = 0;
-  float endAngle = radians(angle);
-
-  // Calculate the coordinates for the circle's center
-  float centerX = width / 2;
-  float centerY = height / 2;
-
-  // Draw the hollow circle
-  stroke(52, 152, 219);
+ 
   strokeWeight(lineWidth);
   noFill();
-  arc(centerX, centerY, circleRadius * 2, circleRadius * 2, startAngle, endAngle);
-
-  angle += 10; // Increase the angle to make the circle open
-
-  if (angle > 360) { // Adjust the limit as needed
-    angle = 0; // Reset the circle
-  }
-
-  rect(x0, y0, widthSquare, heightSquare);
-  rect(x0, y1, widthSquare, heightSquare);
-  rect(x0, y2, widthSquare, heightSquare);
-  rect(x0, y3, widthSquare, heightSquare);
-  rect(x1, y0, widthSquare, heightSquare);
-  rect(x1, y1, widthSquare, heightSquare);
-  rect(x1, y2, widthSquare, heightSquare);
-  rect(x1, y3, widthSquare, heightSquare);
-  rect(x2, y0, widthSquare, heightSquare);
-  rect(x2, y1, widthSquare, heightSquare);
-  rect(x2, y2, widthSquare, heightSquare);
-  rect(x2, y3, widthSquare, heightSquare);
+  
+ rect(x0*0.5, y0/2.70, widthSquare*2,heightSquare);
+  ellipse(x0, y0, widthSquare, heightSquare);
+ ellipse(x0, y1, widthSquare, heightSquare);
+   ellipse(x0, y2, widthSquare, heightSquare);
+  ellipse(x0, y3, widthSquare, heightSquare);
+  ellipse(x1, y0, widthSquare, heightSquare);
+  ellipse(x1, y1, widthSquare, heightSquare);
+ ellipse(x1, y2, widthSquare, heightSquare);
+  ellipse(x1, y3, widthSquare, heightSquare);
+  ellipse(x2, y0, widthSquare, heightSquare);
+   ellipse(x2, y1, widthSquare, heightSquare);
+  ellipse(x2, y2, widthSquare, heightSquare);
+   ellipse(x2, y3, widthSquare, heightSquare);
 } //End draw
 //
 
