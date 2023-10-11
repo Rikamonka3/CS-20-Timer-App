@@ -4,6 +4,7 @@
  */
 //
 //Global Variables
+PImage Backanime;
 int numPadColumns = 3;
 float [] x = new float[numPadColumns];
 int numPadRow = 5;
@@ -18,12 +19,13 @@ float x0, x1, x2;
 float y0, y1, y2, y3, y4;
 //
  void setup() {
-  size (400, 700);
+  size (365, 550);
   appWidth = width;
   appHeight = height;
   //
   //Population of rect() variables
-  
+  Backanime =loadImage("Anime.jpg");
+  background(Backanime);
   widthSquare = appWidth*1/4;
   heightSquare = widthSquare;
   x0 = widthSquare*2/1;
@@ -51,9 +53,6 @@ float y0, y1, y2, y3, y4;
 
 void draw() {
  
-  background(255);
-   background(220);
-  fill(0);
   
   int minutes = currentTime / 60;
   int seconds = currentTime % 60;
@@ -72,7 +71,7 @@ void draw() {
  
   strokeWeight(lineWidth);
   noFill();
-  
+  stroke(255);
  rect(x0*0.5, y0/2.70, widthSquare*2,heightSquare);
   ellipse(x0, y0, widthSquare, heightSquare);
  ellipse(x0, y1, widthSquare, heightSquare);
