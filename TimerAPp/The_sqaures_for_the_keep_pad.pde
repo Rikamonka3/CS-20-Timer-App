@@ -29,7 +29,7 @@ void setup() {
   size (365, 550);
   appWidth = width;
   appHeight = height;
-  //
+  //uwu
   //Population of rect() variables
   rectColor = color(0);
   circleColor = color(255);
@@ -50,6 +50,7 @@ void setup() {
   y3 = widthSquare*11/2;
   y4 = widthSquare*14/2;
   //
+  y5=;
   font = createFont("Arial", 48);
   textFont(font);
   textAlign(CENTER, CENTER);
